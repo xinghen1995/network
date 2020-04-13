@@ -26,7 +26,7 @@ int main(int argc, char *argv[]) {
 		err_sys("sendto error\n");
 	}
 
-	if ((n = recvfrom(sockfd, reply, REPLY, 0, NULL, (int *)NULL)) < 0)
+	if ((n = recvfrom(sockfd, reply, REPLY, 0, NULL, (socklen_t *)NULL)) < 0)
 		err_sys("recvfrom error\n");
 	exit(0);
 }

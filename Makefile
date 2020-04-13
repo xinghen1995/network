@@ -8,7 +8,7 @@ udpcli: error.o udpcli.o
 udpserv: error.o udpserv.o
 	gcc -g $^ -o bin/$@
 
-%.c: %.o
+%.o: %.c
 	gcc -c -g -Wall $< -o $@
 
 clean:

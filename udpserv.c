@@ -19,7 +19,7 @@ int main()
 
 	for (;;) {
 		clilen = sizeof(cli);
-		if ((n = recvfrom(sockfd, request, REQUEST, 0, (SA)&cli, &clilen)) < 0)
+		if ((n = recvfrom(sockfd, request, REQUEST, 0, (SA)&cli, (socklen_t *)&clilen)) < 0)
 			err_sys("recvfrom error\n");
 		printf("recv from client: %s\n", request);
 
